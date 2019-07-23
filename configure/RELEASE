@@ -1,0 +1,21 @@
+#RELEASE Location of external products
+# Run "gnumake clean uninstall install" in the application
+# top directory each time this file is changed.
+
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
+
+SUPPORT=/home/oxygen40/KLANG/Epics/synApps_6_1/support/synApps/support
+-include $(TOP)/../configure/SUPPORT.$(EPICS_HOST_ARCH)
+
+ASYN=$(SUPPORT)/asyn-master
+LUA=$(SUPPORT)/lua-master
+
+# EPICS_BASE usually appears last so other apps can override stuff:
+EPICS_BASE=/APSshare/epics/base-3.15.6
+-include $(TOP)/../configure/EPICS_BASE.$(EPICS_HOST_ARCH)
+
+# These lines allow developers to override these RELEASE settings
+# without having to modify this file directly.
+-include $(TOP)/../RELEASE.local
+-include $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local
+-include $(TOP)/configure/RELEASE.local

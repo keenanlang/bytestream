@@ -4,7 +4,7 @@ ReadTimeout = 4.0
 OutTerminator = "\n\n"
 InTerminator = "\n"
 
-IP_PORT = stream.wrap("IP")
+IP_PORT = stream("IP")
 
 IP_PORT:write("GET / HTTP/1.0")
 matched, HTTP_VER, ERROR_NO, MSG = IP_PORT:read("HTTP/%f %d %c")

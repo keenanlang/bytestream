@@ -170,14 +170,6 @@ local function localwrite(self, data)
 	return asyn.write(data, self.port)
 end
 
-function stream.wrap(portname)
-	local output = {port=portname}
-	
-	output.read = localread
-	output.write = localwrite
-	
-	return output
-end
 
 -- String Formats
 stream.add_format {
@@ -248,5 +240,16 @@ stream.add_format {
 	read = stream.basic_reader {
 			pattern      = [[ C(floating_point) ]],
 			conversion   = function (x) return tonumber(strip(x)) end } }
+
 			
+setmetatable(stream, {__call = 
+	function(self, portname)
+		local output = {port=portname}
+		
+		output.read = localread
+		output.write = localwrite
+		
+		return output
+	end})
+
 return stream

@@ -9,4 +9,6 @@ drvAsynIPPortConfigure("IP", "www.google.com:80", 0, 0, 0)
 iocsh.iocInit()
 ---------------
 
-luaSpawn("./test.lua", "PORT='IP'")
+--luaSpawn("./test.lua", "PORT='IP'")
+
+streamDriver("TEST", "IP", "driver.lua")

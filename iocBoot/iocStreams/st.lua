@@ -6,7 +6,7 @@ testStream_registerRecordDeviceDriver(pdbbase)
 drvAsynIPPortConfigure("IP", "www.google.com:80", 0, 0, 0)
 
 ---------------
-iocsh.iocInit()
+iocInit()
 ---------------
 
 --luaSpawn("./test.lua", "PORT='IP'")

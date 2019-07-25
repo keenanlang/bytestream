@@ -1,15 +1,13 @@
 OutTerminator = "\n"
 InTerminator = "\n"
 
-NAME [[
+param.string "NAME" [[
 	write "GET NAME"
 	return read "NAME = %s"
 ]]
 	
-INTVAL [[
+param.int32 "INTVAL" [[
 	write "GET VALS"
 	
 	return read "VALS = %d, %s"
 ]]
-
-print(_protocols.NAME)

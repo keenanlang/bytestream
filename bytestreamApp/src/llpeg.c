@@ -3,6 +3,6 @@
 
 int luaopen_lpeg(lua_State* state);
 
-static void liblpegRegister(void)    { luaRegisterLibrary("lpeg", luaopen_lpeg); }
+static void llpegRegister(void)    { luaRegisterLibrary("lpeg", luaopen_lpeg); }
 
-epicsExportRegistrar(liblpegRegister);
+epicsExportRegistrar(llpegRegister);

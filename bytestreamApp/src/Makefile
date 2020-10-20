@@ -18,8 +18,6 @@ bytestream_SRCS += lptree.c
 bytestream_SRCS += lpvm.c
 bytestream_SRCS += llpeg.c
 
-bytestream_SRCS += streamDriver.cpp
-
 bytestream_LIBS += asyn
 bytestream_LIBS += lua
 bytestream_LIBS += $(EPICS_BASE_IOC_LIBS)

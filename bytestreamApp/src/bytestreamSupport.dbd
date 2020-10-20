@@ -1,2 +1,1 @@
-registrar(liblpegRegister)
-registrar(streamRegister)
+registrar(llpegRegister)
